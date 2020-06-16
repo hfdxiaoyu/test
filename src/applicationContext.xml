@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+      <!--通过反射创建实例-->
+<!-- 将指定类配置给Spring，让Spring创建其对象的实例 -->
+<bean class="com.itheima.ioc.UserDaoImpl" id="UserDao">
+</bean>
+<bean class="com.itheima.ioc.UserServiceImpl" id="UserService">
+<!--将 id 为 userDao 的 Bean 实例注入到 userService 实例中  -->
+<property name="UserDao" ref="UserDao"/>
+</bean>
+</beans>
